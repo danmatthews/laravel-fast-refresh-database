@@ -36,6 +36,8 @@ trait FastRefreshDatabase
                 $this->storeMigrationChecksum($currentChecksum);
             }
 
+            $this->afterRefreshingDatabase();
+
             RefreshDatabaseState::$migrated = true;
         }
 
